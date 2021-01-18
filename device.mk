@@ -22,4 +22,4 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/xiaomi/apollo/apollo-vendor.mk)
+# $(call inherit-product, vendor/xiaomi/apollo/apollo-vendor.mk)

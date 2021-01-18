@@ -25,4 +25,5 @@ TARGET_KERNEL_CONFIG := vendor/apollo_defconfig
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
 # inherit from the proprietary version
--include vendor/xiaomi/apollo/BoardConfigVendor.mk
+# -include vendor/xiaomi/apollo/BoardConfigVendor.mk
+
