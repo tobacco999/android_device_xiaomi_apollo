@@ -9,6 +9,8 @@
 
 DEVICE_PATH := device/xiaomi/apollo
 
+TARGET_USES_PREBUILT_KERNEL := true
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := apollo,apollopro
 
@@ -19,7 +21,15 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
+ifeq ($(TARGET_USES_PREBUILT_KERNEL), true)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_INCLUDE_DTB_IN_BOOTIMG := 
+else
 TARGET_KERNEL_CONFIG := vendor/apollo_defconfig
+endif
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop

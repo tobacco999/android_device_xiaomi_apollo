@@ -21,5 +21,18 @@ TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
+# Kernel modules
+NEED_KERNEL_MODULE_VENDOR_OVERLAY := true
+KERNEL_MODULES_ORIG := $(LOCAL_PATH)/prebuilt/modules
+
+ifeq ($(NEED_KERNEL_MODULE_VENDOR_OVERLAY),true)
+KERNEL_MODULES_DEST := $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/lib/modules
+else
+KERNEL_MODULES_DEST := $(TARGET_COPY_OUT_VENDOR)/lib/modules
+endif
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(KERNEL_MODULES_ORIG)/,$(KERNEL_MODULES_DEST))
+
 # Inherit from vendor blobs
 # $(call inherit-product, vendor/xiaomi/apollo/apollo-vendor.mk)
