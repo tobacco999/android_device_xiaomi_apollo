@@ -31,9 +31,11 @@ else
 TARGET_KERNEL_CONFIG := vendor/apollo_defconfig
 endif
 
+# Key for InputDispatcher to skip
+TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY := 97
+
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 
 # inherit from the proprietary version
 # -include vendor/xiaomi/apollo/BoardConfigVendor.mk
-
