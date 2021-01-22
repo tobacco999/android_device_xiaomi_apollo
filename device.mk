@@ -28,6 +28,15 @@ TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_SHIPPING_API_LEVEL := 29
+    
+# Camera
+ifeq ($(ARROW_GAPPS), true)
+PRODUCT_PACKAGES += \
+    GCamGOPrebuilt
+else
+PRODUCT_PACKAGES += \
+    Snap
+endif
 
 # Kernel modules
 NEED_KERNEL_MODULE_VENDOR_OVERLAY := true
