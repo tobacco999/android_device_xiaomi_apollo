@@ -29,4 +29,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="apollo-user 11 RKQ1.200826.002 20.12.25 release-keys"
 
-BUILD_FINGERPRINT := Redmi/apollo/apollo:11/RKQ1.200826.002/20.12.25:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/apollopro_eea/apollo:10/QKQ1.200419.002/V12.0.13.0.QJDEUXM:user/release-keys
