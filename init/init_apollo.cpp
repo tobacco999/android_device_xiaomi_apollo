@@ -67,7 +67,7 @@ void vendor_load_properties() {
     if (model == "M2007J3SY") {
         property_override_dual("ro.product.model", "ro.vendor.product.model", "Mi 10T");
         property_override_dual("ro.product.device", "ro.product.vendor.device", "apollo");
-    } else if (model == "M2007J3SG") {
+    } else {
         property_override_dual("ro.product.model", "ro.vendor.product.model", "Mi 10T Pro");
         property_override_dual("ro.product.device", "ro.product.vendor.device",  "apollopro");
     }
